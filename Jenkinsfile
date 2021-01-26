@@ -7,3 +7,4 @@ node {
         sh 'make test'
     }
 }
+
