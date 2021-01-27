@@ -2,8 +2,8 @@ pipeline  {
     agent any
 
     environment {
-        FE_SWR_CREDENTIALS_LOGIN    = credentials('FE_SWR_CREDENTIALS_LOGIN')
-        FE_SWR_CREDENTIALS_PASSWORD = credentials('FE_SWR_CREDENTIALS_PASSWORD')
+        FE_SWR_CREDENTIALS_LOGIN    = credentials('fe-swr-credential-login')
+        FE_SWR_CREDENTIALS_PASSWORD = credentials('fe-swr-credential-password')
         FE_SWR_URL = "registry.eu-west-0.prod-cloud-ocb.orange-business.com"
     }
 
