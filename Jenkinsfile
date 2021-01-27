@@ -16,13 +16,17 @@ pipeline  {
             }
         }
         stage ('Register') {
+            steps {
                 echo "Register the Docker Image to SWR"              
                 sh "docker login -u $FE_SWR_CREDENTIALS_LOGIN -p $FE_SWR_CREDENTIALS_PASSWORD registry.eu-west-0.prod-cloud-ocb.orange-business.com"
                 sh "docker push registry.eu-west-0.prod-cloud-ocb.orange-business.com/ernest/my-nginx:${env.BUILD_ID}"
+            }
         }
 
         stage ('Deploy') {
+            steps {
                 echo "Deploy the Docker Images to CCR"              
+            }
         }
     }
 
