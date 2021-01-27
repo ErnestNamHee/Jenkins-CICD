@@ -1,9 +1,9 @@
-pipeline  {
+node  {
     checkout scm
     environment {
         FE_SWR_CREDENTIALS_LOGIN    = credentials('FE_SWR_CREDENTIALS_LOGIN')
         FE_SWR_CREDENTIALS_PASSWORD = credentials('FE_SWR_CREDENTIALS_PASSWORD')
-        FE_SWR_URL = "registry.eu-west-0.prod-cloud-ocb.orange-business.com"
+        def FE_SWR_URL = "registry.eu-west-0.prod-cloud-ocb.orange-business.com"
     }
 
 
