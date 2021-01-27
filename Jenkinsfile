@@ -12,7 +12,7 @@ pipeline  {
             steps {
                 echo "Building the Docker Image"
                 //def customImage = docker.build("my-nginx:${env.BUILD_ID}")        
-                sh "docker build -t $FE_SWR_URL/ernest/my-nginx:${env.BUILD_ID} ."
+                sh "docker build -t ${FE_SWR_URL}/ernest/my-nginx:${env.BUILD_ID} ."
             }
         }
         stage ('Register') {
