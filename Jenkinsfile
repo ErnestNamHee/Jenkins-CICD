@@ -1,4 +1,4 @@
-node {
+pipeline  {
     checkout scm
     environment {
         FE_SWR_CREDENTIALS_LOGIN    = credentials('FE_SWR_CREDENTIALS_LOGIN')
