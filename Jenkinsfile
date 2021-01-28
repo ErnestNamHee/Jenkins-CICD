@@ -33,7 +33,7 @@ pipeline  {
                 
                 sh "sed -i 's/<SWR_REGISTRY>/${FE_SWR_URL}/' *.yaml"
                 sh "sed -i 's/<SWR_ORGANIZATION>/${FE_SWR_ORGANIZATION}/' *.yaml"
-                sh "sed -i 's/<DOCKER_IMAGENAME_TAG>/${FE_SWDOCKER_IMAGENAMER_URL}:${env.BUILD_ID}/' *.yaml"
+                sh "sed -i 's/<DOCKER_IMAGENAME_TAG>/${DOCKER_IMAGENAME}:${env.BUILD_ID}/' *.yaml"
                 
                 sh "cat *.yaml"
 
