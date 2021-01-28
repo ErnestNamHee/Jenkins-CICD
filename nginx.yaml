@@ -15,7 +15,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: <IMAGES> 
+      - image: <SWR_REGISTRY>/<SWR_ORGANIZATION>/<DOCKER_IMAGENAME_TAG>
         imagePullPolicy: Always
         name: nginx
       imagePullSecrets:
