@@ -35,19 +35,14 @@ pipeline  {
                 sh "cat *.yaml"
 
                 echo "begin to config kubenetes"
-                try { 
-                    kubernetesDeploy(
-                        kubeconfigId: "fe-cce-kubeconfig",
-                        configs: "nginx.yaml")
-                    println "hooray, success"
-                } catch (e) {
-                    println "oh no! Deployment failed! "
-                    println e
+                
+                kubernetesDeploy(
+                    kubeconfigId: "fe-cce-kubeconfig",
+                    configs: "nginx.yaml")
+                
+                echo "hooray, success"
                 }
               
             }
-        }
     }
-
 }
-
