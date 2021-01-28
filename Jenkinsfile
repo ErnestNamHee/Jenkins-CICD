@@ -31,7 +31,8 @@ pipeline  {
             steps {
                 echo "Deploy the Docker Images to CCE"
                 
-                sh "sed -i 's/<IMAGES>/${FE_SWR_URL}/${FE_SWR_ORGANIZATION}/${DOCKER_IMAGENAME}:${env.BUILD_ID}/' *.yaml"
+                def imagename = "${FE_SWR_URL}\/${FE_SWR_ORGANIZATION}\/${DOCKER_IMAGENAME}\:${env.BUILD_ID}"
+                sh "sed -i 's/<IMAGES>/${imagename}/' *.yaml"
                 sh "cat *.yaml"
 
                 echo "begin to config kubenetes"
