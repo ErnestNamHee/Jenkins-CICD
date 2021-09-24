@@ -39,10 +39,8 @@ pipeline  {
 
                 echo "begin to config kubenetes"
                 
-                kubernetesDeploy(
-                    kubeconfigId: "fe-cce-kubeconfig",
-                    configs: "nginx.yaml")
-                
+                sshagent(['fe-ecs-kubectl-client']) {
+                    sh "ls -ltr"
                 echo "hooray, success"
                 }
               
