@@ -1,20 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: nginx
+  name: nginx
 spec:
- replicas: 1
- selector:
-   matchLabels:
-     app: nginx
- strategy:
-   type: RollingUpdate
- template:
-   metadata:
-     labels:
-       app: nginx
-   spec:
-     containers:
-     - image: <SWR_REGISTRY>/<SWR_ORGANIZATION>/<DOCKER_IMAGENAME_TAG>
-       imagePullPolicy: Always
-       name: nginx
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - image: nginx #Click here to select another image.
+        imagePullPolicy: Always
+        name: nginx
+      imagePullSecrets:
+      - name: default-secret
