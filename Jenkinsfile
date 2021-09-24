@@ -40,7 +40,7 @@ pipeline  {
                 echo "begin to config kubenetes"
                 
                 sshagent(['fe-ecs-kubectl-client']) {
-                    sh "ssh cloud@90.84.186.51:22 ls -ltr"
+                    sh "ssh cloud@90.84.186.51 -p 22 ls -ltr"
                 echo "hooray, success"
                 }
               
